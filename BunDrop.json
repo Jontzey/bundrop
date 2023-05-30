@@ -1,0 +1,72 @@
+
+{
+  "Burgers":
+  [
+    {
+      "Id":1,
+      "name":"Mc Whap",
+      "image":"https://max-images.futureordering.com/images/product/13293/A100BB0EE1EB08F52E5FF1DB1D6C7FD1D/326x303.PNG",
+      "price": 70
+    },
+    {
+      "Id":2,
+      "name":"Mc Whop",
+      "image":"https://max-images.futureordering.com/images/product/13297/E39D3317D830437B15E03EFD99E9A7A7D/326x303.PNG",
+      "price": 87
+    }
+    ,
+    {
+      "Id":3,
+      "name":"Mc Chicken",
+      "image":"https://max-images.futureordering.com/images/product/13297/E39D3317D830437B15E03EFD99E9A7A7D/326x303.PNG",
+      "price": 102
+    }
+    ,
+    {
+      "Id":4,
+      "name":"Mc Whop",
+      "image":"https://max-images.futureordering.com/images/product/13297/E39D3317D830437B15E03EFD99E9A7A7D/326x303.PNG",
+      "price": 87
+    }
+    ,
+    {
+      "Id":5,
+      "name":"Mc Chicken",
+      "image":"https://max-images.futureordering.com/images/product/13297/E39D3317D830437B15E03EFD99E9A7A7D/326x303.PNG",
+      "price": 102
+    }
+    ,
+    {
+      "Id":6,
+      "name":"Mc Whop",
+      "image":"https://max-images.futureordering.com/images/product/13297/E39D3317D830437B15E03EFD99E9A7A7D/326x303.PNG",
+      "price": 87
+    }
+    ,
+    {
+      "Id":7,
+      "name":"Mc Chicken",
+      "image":"https://max-images.futureordering.com/images/product/13297/E39D3317D830437B15E03EFD99E9A7A7D/326x303.PNG",
+      "price": 102
+    }
+
+  ],
+
+  "Drinks":[
+    {
+      "id":"1",
+      "name":"Coca Cola",
+      "price": 16
+    },
+    {
+      "id":"2",
+      "name":"Coca Cola Zero",
+      "price": 14
+    },
+    {
+      "id":"3",
+      "name":"Fanta",
+      "price": 12
+    }
+  ]
+}
