@@ -4,6 +4,7 @@ import Navbar from '../componentsUi/Navbar';
 import ProductList from "../components/ProductList"
 import ProductSelection from '../components/ProductSelection';
 import { useEffect, useState } from 'react';
+import Searchbar from '../components/Searchbar';
 
 
 
@@ -22,6 +23,7 @@ function Menu() {
     return ( <div>
         <Navbar/>
         <ProductSelection GetNotificationNotImplemented={getNotiWindow} />
+        <Searchbar/>
         <ProductList/>
     </div>);
 }

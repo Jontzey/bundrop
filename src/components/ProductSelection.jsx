@@ -8,9 +8,6 @@ function ProductSelection(props) {
 
     const [popWindow, setPopWindow] = useState(false);
 
-    function filterMenu() {
-        props.getTheProducts(console.log("test"));
-    }
     function getNotiWindow() {
 
         if(popWindow === false){
@@ -36,8 +33,8 @@ function ProductSelection(props) {
     
     return ( <div className='MenySele-container'>
         <button onClick={getNotiWindow} className='btnSel'>+ Menu</button>
-        <button className='btnSel'>Drinks</button>
-        <button className='btnSel'>Burgers</button>
+        <button onClick={getNotiWindow} className='btnSel'>Drinks</button>
+        <button onClick={getNotiWindow} className='btnSel'>Burgers</button>
         {!popWindow ? (
             <div >
                 

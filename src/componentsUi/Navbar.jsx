@@ -51,7 +51,7 @@ function Navbar() {
                     
                     <div className='highlightDiv'><Link style={{color:"whitesmoke", fontStyle:"normal",textDecoration:"none"}} to={"/home"}><h2>Home</h2></Link></div>
                     <div className='highlightDiv'><Link style={{color:"whitesmoke", fontStyle:"normal",textDecoration:"none"}} to={"/menu"}><h2>Menu</h2></Link></div>
-                    <div className='highlightDiv'><Link style={{color:"whitesmoke", fontStyle:"normal",textDecoration:"none"}} to={"/"}><h2>Orders</h2></Link></div>
+                    <div className='highlightDiv'><Link style={{color:"whitesmoke", fontStyle:"normal",textDecoration:"none"}} to={"/order"}><h2>Orders</h2></Link></div>
                     <div className='highlightDiv'><Link style={{color:"whitesmoke", fontStyle:"normal",textDecoration:"none",}} to={"/"}><h2>Login</h2></Link></div>    
                 </div>
             ) 
