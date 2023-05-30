@@ -3,27 +3,15 @@ import { useState,useEffect } from 'react';
 
 
 
-function ProductList() {
-    const [burgerData, SetBurgerData] = useState([]);
-    function getData(data) {
-        SetBurgerData(data);
-    }
+function ProductList(burger) {
+    return (  <div >
 
-    useEffect(() => {
-        fetch("http://localhost:9000/Burgers").then((res) => res.json()).then((data) => getData(data))
-    },[])
-    return (  <div className='productlist-container'>
-
-            {
-                burgerData.map((b) => (
                     <div className='All-products'>
-                        <h2 style={{margin:"0"}}>{b.name}</h2>
-                        <img src={b.image} alt="" />
-                        <h3 style={{margin:"0"}} >Price: {b.price}</h3>
+                        <h2 style={{margin:"0", fontSize:"22px"}}>{burger.name}</h2>
+                        <img src={burger.image} alt="" />
+                        <h3 style={{margin:"0"}} >Price: {burger.price}</h3>
                         <button>Details</button>
                     </div>
-                ))
-            }
        
     </div>);
 }

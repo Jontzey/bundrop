@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 
 
 
-function Searchbar() {
+function Searchbar(props) {
+
+
     return (  <div style={{display:"flex", justifyContent:"center", marginTop:"10px", flexDirection:"column", alignItems:"center"}}>
         <h3>Search for your favorite!</h3>
-        <input type='text'/>
+        <input onChange={(e) => {
+            props.SearchB(e.target.value)
+        }}  type='text'/>
     </div>);
 }
 
