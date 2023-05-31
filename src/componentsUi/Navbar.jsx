@@ -22,7 +22,7 @@ function Navbar() {
     return (  <div className='Navbar-container'>
                 <div className='Navbar-holder'>
                 <div className='Navbar-logsalmon-container'>
-                    <img style={{height:"80px", marginLeft:"30px"}} src={logosalmon} alt="" />
+                   <Link to={"/"}><img style={{height:"80px", marginLeft:"30px"}} src={logosalmon} alt="" /> </Link> 
                 </div>
                 <div className='Navbar-dropmenu'>
                     {!Toggle ?

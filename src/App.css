@@ -7,6 +7,7 @@ background-color: #5E5A5A;
 
 .Navbar-container{
   display: flex;
+  position: sticky;
   flex-direction: column;
   background-color: black;
   width: 100%;
@@ -71,14 +72,17 @@ h2{
 .productlist-container{
   display: flex;
   flex-wrap: wrap;
-  gap:15px;
+  justify-content: center;
+  gap: 60px;
   margin-top: 20px;
 }
 .All-products{
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   border: solid;
+  background-color: #141414;
   border-radius: 20px;
 }
 
@@ -119,3 +123,4 @@ h2{
   border-radius: 40px;
   z-index: 10;
 }
+

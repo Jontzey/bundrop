@@ -7,7 +7,10 @@ import { Link } from 'react-router-dom';
 function Home() {
 
     return ( <div className='Home-component'>
+        <div style={{position:"sticky"}}>
             <Navbar/>
+        </div>
+            
         <div className='Home-container'>
             <div className='IntroWelcom-text'>
                 <h1>Welcom To Bun Drop</h1>
