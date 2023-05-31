@@ -7,18 +7,26 @@ import { Link } from 'react-router-dom';
 function Orders() {
 
     const [getCarItems, SetGetCartItems] = useState([]);
+    const [SummaryPrice, SetSummaryPrice] = useState();
+    const [isOrderEmpty, SetOrdersWindow] = useState(false)
+   
 
     useEffect(() => {
         let items = localStorage.getItem("CartItems");
 
         if(!items) {
             items = [];
+            SetOrdersWindow(false);
         }
         else {
              let cartitems = JSON.parse(items);
              SetGetCartItems(cartitems);
              console.table(cartitems)
-        }
+            }
+            let sum = getCarItems.filter((item) => item.hasOwnProperty("price")).
+            map((item) => item.price).reduce((SummaryPrice, price) => SummaryPrice + price, 0);
+            SetSummaryPrice(sum);
+            SetOrdersWindow(true);
     },[])
     return ( <div style={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
         <Navbar/>
@@ -46,12 +54,23 @@ function Orders() {
                 ))
             }
             </div>
+            {
+                !isOrderEmpty ? 
+                (
+                    <div>
+                        <h1 style={{color:"whitesmoke"}}>No orders has been added</h1>
+                    </div>
+                ):
+                (
+                    <div className='Detail-container'>
+                        <h1>Details</h1>
+                        <h3>Price:{SummaryPrice}</h3>
+                        
+                        <Link to={"/Payment"}><button style={{width:"100px",marginTop:"30px"}}>Pay</button></Link>
+                    </div>
+                )
+            }
            
-            <div className='Detail-container'>
-                <h1>Details</h1>
-                <h3>Price:</h3>
-                <Link to={"/Payment"}><button style={{width:"100px",marginTop:"30px"}}>Pay</button></Link>
-            </div>
         </div>
         </div>
        
