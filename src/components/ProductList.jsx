@@ -13,7 +13,7 @@ function ProductList(burger) {
         else {
             Cart = JSON.parse(Cart)
         }
-        Cart.push({ name:burger.name, price:burger.price});
+        Cart.push({ name:burger.name, price:burger.price,image: burger.image});
         localStorage.setItem("CartItems", JSON.stringify(Cart));
         alert(burger.name, "was added")
         

@@ -8,6 +8,7 @@ background-color: #5E5A5A;
 .Navbar-container{
   display: flex;
   position: sticky;
+  top: 0%;
   flex-direction: column;
   background-color: black;
   width: 100%;
@@ -124,3 +125,76 @@ h2{
   z-index: 10;
 }
 
+
+.Order-container{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 1000px;
+  /* transform: translateX(50%); */
+  margin-top: 200px;
+  background-color: #1D1717;
+}
+
+.Orders-container{
+  display:flex;
+  align-items: center;
+  border-radius: 10px;
+  border:solid;
+  cursor: pointer;
+  background-color:#D9D9D9;
+  justify-Content:space-between;
+  
+}
+
+.Orders-container:hover{
+  display:flex;
+  align-items: center;
+  border:solid;
+  cursor: pointer;
+  background-color:rgb(165, 144, 144);
+  justify-Content:space-between;
+}
+
+.Cancel-order{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(89, 77, 77, 0.2);
+  height: 96px;
+  width: 40px;
+  cursor: pointer;
+}
+
+.Cancel-order:hover{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  height: 96px;
+  width: 40px;
+  cursor: pointer;
+}
+
+.allOrders{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+}
+
+.Detail-container{
+  display: flex;
+  position: sticky;
+  top: 100px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  height: 300px;
+  width: 200px;
+  background-color: white;
+  
+}
