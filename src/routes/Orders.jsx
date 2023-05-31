@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../componentsUi/Navbar';
+import { Link } from 'react-router-dom';
 
 
 
@@ -49,7 +50,7 @@ function Orders() {
             <div className='Detail-container'>
                 <h1>Details</h1>
                 <h3>Price:</h3>
-                <button style={{width:"100px",marginTop:"30px"}}>Pay</button>
+                <Link to={"/Payment"}><button style={{width:"100px",marginTop:"30px"}}>Pay</button></Link>
             </div>
         </div>
         </div>

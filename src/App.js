@@ -6,6 +6,7 @@ import Home from './routes/Home';
 import Navbar from './componentsUi/Navbar';
 import Menu from './routes/Menu';
 import Orders from './routes/Orders';
+import Payment from './routes/Payment';
 function App() {
   return (
     <div className="App">
@@ -20,6 +21,8 @@ function App() {
 
         
           <Route caseSensitive={false} path='/order' element={<Orders/>}/>
+
+          <Route caseSensitive={false} path='/payment' element={<Payment/>}/>
 
           <Route path='*' element={<NotFound/>}/>
 
