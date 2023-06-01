@@ -5,6 +5,7 @@ import ProductList from "../components/ProductList"
 import ProductSelection from '../components/ProductSelection';
 import { useEffect, useState } from 'react';
 import Searchbar from '../components/Searchbar';
+import CartHolder from '../componentsUi/CartHolder';
 
 
 
@@ -44,6 +45,7 @@ function Menu() {
     return ( <div>
         <Navbar/>
         <ProductSelection GetNotificationNotImplemented={getNotiWindow} />
+        <CartHolder/>
         <Searchbar SearchB={SearchBurger}/>
         <div className='productlist-container'>
             {

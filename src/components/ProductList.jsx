@@ -17,6 +17,19 @@ function ProductList(burger) {
         localStorage.setItem("CartItems", JSON.stringify(Cart));
         alert(burger.name, "was added")
         
+        let total = Cart.reduce((accumulator, item) => accumulator + item.price, 0);
+
+        let TotalPrice = localStorage.getItem("TotalPrice");
+        if(!TotalPrice){  
+            TotalPrice = {TotalP:0};
+        }
+        else {
+            TotalPrice = JSON.parse(TotalPrice)
+        }
+        TotalPrice.TotalP = total;
+        localStorage.setItem("TotalPrice", JSON.stringify(TotalPrice));
+        console.log(total);
+        
     }
     return (  <div >
 

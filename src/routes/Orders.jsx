@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 
 function Orders() {
 
-    const [getCarItems, SetGetCartItems] = useState([]);
-    const [SummaryPrice, SetSummaryPrice] = useState();
+    const [getCartItems, SetGetCartItems] = useState([]);
+    const [SummaryPrice, SetSummaryPrice] = useState(0);
     const [isOrderEmpty, SetOrdersWindow] = useState(false)
    
 
@@ -21,12 +21,14 @@ function Orders() {
         else {
              let cartitems = JSON.parse(items);
              SetGetCartItems(cartitems);
-             console.table(cartitems)
+             SetOrdersWindow(true);
+               
             }
-            let sum = getCarItems.filter((item) => item.hasOwnProperty("price")).
-            map((item) => item.price).reduce((SummaryPrice, price) => SummaryPrice + price, 0);
-            SetSummaryPrice(sum);
-            SetOrdersWindow(true);
+
+        let totalprice = localStorage.getItem("TotalPrice");
+        let parsedTotalPrice = JSON.parse(totalprice);
+            SetSummaryPrice(parsedTotalPrice.TotalP);
+                
     },[])
     return ( <div style={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
         <Navbar/>
@@ -39,7 +41,7 @@ function Orders() {
             <div className='allOrders'>
                  {
                     
-                getCarItems.map((Order) => (
+                getCartItems.map((Order) => (
                     <div className='Orders-container'>
                         <div>
                             <img style={{width:"60px", border:"white solid"}} src={Order.image} alt="" />
