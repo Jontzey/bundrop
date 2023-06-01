@@ -14,7 +14,7 @@ function Menu() {
     const [isWindow, setWindow] = useState(false);
     const [burgerData, SetBurgerData] = useState([]);
     const [filterProductList, SetProductList] = useState([]);
-
+    const [getItemNumberData, SetItemData] = useState(0);
     function getNotiWindow(isWindowF) {
 
         setWindow(isWindowF)
@@ -25,6 +25,11 @@ function Menu() {
     function getData(data) {
         SetBurgerData(data);
         SetProductList(data);
+    }
+    function ChangeCart(props) {
+
+        console.log(props, "MENU page test")
+        SetItemData(props);
     }
 
     function SearchBurger(UserInput) {
@@ -45,7 +50,7 @@ function Menu() {
     return ( <div>
         <Navbar/>
         <ProductSelection GetNotificationNotImplemented={getNotiWindow} />
-        <CartHolder/>
+        <CartHolder GetItems={getItemNumberData}/>
         <Searchbar SearchB={SearchBurger}/>
         <div className='productlist-container'>
             {
@@ -55,6 +60,7 @@ function Menu() {
                     name={burger.name}
                     image={burger.image}
                     price={burger.price}
+                    CartHolder={ChangeCart}
                     />
                 ))
             }

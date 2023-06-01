@@ -4,6 +4,7 @@ import { useState,useEffect } from 'react';
 
 
 function ProductList(burger) {
+
     function addToCart() {
         let Cart = localStorage.getItem("CartItems")
 
@@ -29,7 +30,22 @@ function ProductList(burger) {
         TotalPrice.TotalP = total;
         localStorage.setItem("TotalPrice", JSON.stringify(TotalPrice));
         console.log(total);
+
+        let number = Cart.length;
         
+        let cartItemsNumberDisplayer = localStorage.getItem("NumberOfCartItems")
+        if(!cartItemsNumberDisplayer){  
+            cartItemsNumberDisplayer = {Items: 0};
+        }
+        else {
+            cartItemsNumberDisplayer = JSON.parse(cartItemsNumberDisplayer)
+        }
+        cartItemsNumberDisplayer = number;
+        localStorage.setItem("NumberOfCartItems", JSON.stringify(cartItemsNumberDisplayer));
+
+        // TEST
+        burger.CartHolder(number);
+  
     }
     return (  <div >
 

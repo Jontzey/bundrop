@@ -5,21 +5,26 @@ import { faHouse,faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 
 
-function CartHolder() {
+function CartHolder(props) {
 
-        let [NumberOfItems, SetItems] = useState(0);
+        let [NumberOfItems, SetItems] = useState("0");
     useEffect(() => {
-        let CartNumber = localStorage.getItem("CartItems")
-        let parsedItems = JSON.parse(CartNumber);
 
-        SetItems(parsedItems.length);
-    },[])
+
+         let cartItemsNumberDisplayer = localStorage.getItem("NumberOfCartItems")
+         cartItemsNumberDisplayer = JSON.parse(cartItemsNumberDisplayer);
+         SetItems(cartItemsNumberDisplayer);
+      
+    })
+        
+            
+        
     return (  <div style={{display:"flex", backgroundColor:"#", justifyContent:"center", marginTop:"15px"}}>
         <div style={{marginTop:"10px"}}>
         <FontAwesomeIcon icon={faCartShopping} size="2xl" />
         </div>
         <div style={{marginLeft:"2px"}}>
-            {NumberOfItems}
+            <h3>{NumberOfItems}</h3>
         </div>
     </div>);
 }
