@@ -10,6 +10,16 @@ function Orders() {
     const [SummaryPrice, SetSummaryPrice] = useState(0);
     const [isOrderEmpty, SetOrdersWindow] = useState(false)
    
+    function DeleteOrder(name) {
+        
+        const deleteItem = name;
+        const updatedStorage = getCartItems.filter((s) => s.name !== deleteItem);
+        console.log(deleteItem)
+        SetGetCartItems(updatedStorage);
+        localStorage.setItem("CartItems", JSON.stringify(updatedStorage));
+        // console.table(getCartItems);
+
+    }
 
     useEffect(() => {
         let items = localStorage.getItem("CartItems");
@@ -49,7 +59,7 @@ function Orders() {
                         </div>
                         <h1>{Order.name}</h1>
                             
-                        <div className='Cancel-order'>
+                        <div Name={Order.name} onClick={DeleteOrder} className='Cancel-order'>
                            X
                         </div>
                     </div>
