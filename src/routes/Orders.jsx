@@ -13,10 +13,11 @@ function Orders() {
     function DeleteOrder(name) {
         
         const deleteItem = name;
-        const updatedStorage = getCartItems.filter((s) => s.name !== deleteItem);
-        console.log(deleteItem)
-        SetGetCartItems(updatedStorage);
-        localStorage.setItem("CartItems", JSON.stringify(updatedStorage));
+        console.log(name)
+        // const updatedStorage = getCartItems.filter((s) => s.name !== deleteItem);
+        // console.log(deleteItem)
+        // SetGetCartItems(updatedStorage);
+        // localStorage.setItem("CartItems", JSON.stringify(updatedStorage));
         // console.table(getCartItems);
 
     }
