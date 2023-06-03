@@ -3,7 +3,6 @@ import Navbar from '../componentsUi/Navbar';
 import { Link } from 'react-router-dom';
 
 
-
 function Orders() {
 
     const [getCartItems, SetGetCartItems] = useState([]);
@@ -33,7 +32,8 @@ function Orders() {
         }
         TotalPrice.TotalP = total;
         localStorage.setItem("TotalPrice", JSON.stringify(TotalPrice));
-        console.log(total);
+        SetSummaryPrice(total);
+       
 
         let number = updatedStorage.length;
         
@@ -46,6 +46,15 @@ function Orders() {
         }
         cartItemsNumberDisplayer = number;
         localStorage.setItem("NumberOfCartItems", JSON.stringify(cartItemsNumberDisplayer));
+        if(number === 0){
+            if(isOrderEmpty ===  true){
+
+                SetOrdersWindow(false)
+            }
+        }
+        else{
+
+        }
 
     }
 
@@ -68,7 +77,7 @@ function Orders() {
             SetSummaryPrice(parsedTotalPrice.TotalP);
             console.log(isOrderEmpty);
                 
-    })
+    },[])
     return ( <div style={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
         <Navbar/>
         <div className='Order-container'>
@@ -109,6 +118,7 @@ function Orders() {
                         
                         <Link to={"/Payment"}><button style={{width:"100px",marginTop:"30px"}}>Pay</button></Link>
                     </div>
+                        
                 )
             }
            
