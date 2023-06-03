@@ -10,15 +10,42 @@ function Orders() {
     const [SummaryPrice, SetSummaryPrice] = useState(0);
     const [isOrderEmpty, SetOrdersWindow] = useState(false)
    
-    function DeleteOrder(name) {
+    function DeleteOrder(props) {
         
-        const deleteItem = name;
-        console.log(name)
-        // const updatedStorage = getCartItems.filter((s) => s.name !== deleteItem);
-        // console.log(deleteItem)
-        // SetGetCartItems(updatedStorage);
-        // localStorage.setItem("CartItems", JSON.stringify(updatedStorage));
-        // console.table(getCartItems);
+        const deleteItem = props.target;
+        const item = deleteItem.getAttribute("id");
+        console.log(props.target.parentElement)
+        console.log(item)
+        const updatedStorage = getCartItems.filter((s) => s.id !== parseInt(item));
+        SetGetCartItems(updatedStorage);
+        localStorage.setItem("CartItems", JSON.stringify(updatedStorage));
+        console.log(getCartItems);
+
+        
+        let total = updatedStorage.reduce((accumulator, item) => accumulator + item.price, 0);
+
+        let TotalPrice = localStorage.getItem("TotalPrice");
+        if(!TotalPrice){  
+            TotalPrice = {TotalP:0};
+        }
+        else {
+            TotalPrice = JSON.parse(TotalPrice)
+        }
+        TotalPrice.TotalP = total;
+        localStorage.setItem("TotalPrice", JSON.stringify(TotalPrice));
+        console.log(total);
+
+        let number = updatedStorage.length;
+        
+        let cartItemsNumberDisplayer = localStorage.getItem("NumberOfCartItems")
+        if(!cartItemsNumberDisplayer){  
+            cartItemsNumberDisplayer = {Items: 0};
+        }
+        else {
+            cartItemsNumberDisplayer = JSON.parse(cartItemsNumberDisplayer)
+        }
+        cartItemsNumberDisplayer = number;
+        localStorage.setItem("NumberOfCartItems", JSON.stringify(cartItemsNumberDisplayer));
 
     }
 
@@ -39,8 +66,9 @@ function Orders() {
         let totalprice = localStorage.getItem("TotalPrice");
         let parsedTotalPrice = JSON.parse(totalprice);
             SetSummaryPrice(parsedTotalPrice.TotalP);
+            console.log(isOrderEmpty);
                 
-    },[])
+    })
     return ( <div style={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
         <Navbar/>
         <div className='Order-container'>
@@ -60,7 +88,7 @@ function Orders() {
                         </div>
                         <h1>{Order.name}</h1>
                             
-                        <div Name={Order.name} onClick={DeleteOrder} className='Cancel-order'>
+                        <div id={Order.id} name={Order.name} onClick={DeleteOrder} className='Cancel-order'>
                            X
                         </div>
                     </div>

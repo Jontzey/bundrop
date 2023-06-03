@@ -14,7 +14,10 @@ function ProductList(burger) {
         else {
             Cart = JSON.parse(Cart)
         }
-        Cart.push({ name:burger.name, price:burger.price,image: burger.image});
+        /// Chat gpt
+        const newId = Cart.length > 0 ? Cart[Cart.length - 1].id + 1 : 0;
+        ///
+        Cart.push({id:newId, name:burger.name, price:burger.price,image: burger.image});
         localStorage.setItem("CartItems", JSON.stringify(Cart));
         alert(burger.name, "was added")
         
