@@ -1,80 +1,66 @@
-
 {
-  "Burgers":
-  [
+  "Burgers": [
     {
-      "Id":1,
-      "name":"Real Green Burger",
-      "image":"https://max-images.futureordering.com/images/product/13297/E39D3317D830437B15E03EFD99E9A7A7D/326x303.PNG",
+      "Id": 1,
+      "name": "Real Green Burger",
+      "image": "https://max-images.futureordering.com/images/product/13297/E39D3317D830437B15E03EFD99E9A7A7D/326x303.PNG",
       "price": 73
     },
     {
-      "Id":2,
-      "name":"Crispy Supreme Sandwhich",
-      "image":"https://max-images.futureordering.com/images/product/13293/A100BB0EE1EB08F52E5FF1DB1D6C7FD1D/326x303.PNG",
+      "Id": 2,
+      "name": "Crispy Supreme Sandwhich",
+      "image": "https://max-images.futureordering.com/images/product/13293/A100BB0EE1EB08F52E5FF1DB1D6C7FD1D/326x303.PNG",
       "price": 84
-    }
-    ,
+    },
     {
-      "Id":3,
-      "name":"Crispy Supreme Buffalo",
-      "image":"https://max-images.futureordering.com/images/product/13294/E582D72BA21492BE7D88BEFAB4F5DE60D/326x303.PNG",
+      "Id": 3,
+      "name": "Crispy Supreme Buffalo",
+      "image": "https://max-images.futureordering.com/images/product/13294/E582D72BA21492BE7D88BEFAB4F5DE60D/326x303.PNG",
       "price": 87
-    }
-    ,
+    },
     {
-      "Id":4,
-      "name":"Crispy Supreme Parmesan",
-      "image":"https://max-images.futureordering.com/images/product/13295/0137F814A3DEF2C0271B6702C284721FD/326x303.PNG",
+      "Id": 4,
+      "name": "Crispy Supreme Parmesan",
+      "image": "https://max-images.futureordering.com/images/product/13295/0137F814A3DEF2C0271B6702C284721FD/326x303.PNG",
       "price": 88
-    }
-    ,
+    },
     {
-      "Id":5,
-      "name":"Plant Beef Cheddar 'n' Chili",
-      "image":"https://max-images.futureordering.com/images/product/13298/CE1A5CD80BA6CF0ECDA1BF6B09B86203D/326x303.PNG",
+      "Id": 5,
+      "name": "Plant Beef Cheddar 'n' Chili",
+      "image": "https://max-images.futureordering.com/images/product/13298/CE1A5CD80BA6CF0ECDA1BF6B09B86203D/326x303.PNG",
       "price": 73
-    }
-    ,
+    },
     {
-      "Id":6,
-      "name":"Plant Beef Burger",
-      "image":"https://max-images.futureordering.com/images/product/13302/DA3AD0B598EAECC05310647605D3197BD/326x303.PNG",
+      "Id": 6,
+      "name": "Plant Beef Burger",
+      "image": "https://max-images.futureordering.com/images/product/13302/DA3AD0B598EAECC05310647605D3197BD/326x303.PNG",
       "price": 69
-    }
-    ,
+    },
     {
-      "Id":7,
-      "name":"DeliVery Cheezy Plant Beef",
-      "image":"https://max-images.futureordering.com/images/product/13299/BF61FD88116A3BEFBDED40B04E303E10D/326x303.PNG",
+      "Id": 7,
+      "name": "DeliVery Cheezy Plant Beef",
+      "image": "https://max-images.futureordering.com/images/product/13299/BF61FD88116A3BEFBDED40B04E303E10D/326x303.PNG",
       "price": 89
-    }
-    ,
+    },
     {
-      "Id":8,
-      "name":"Double Grilloumi®-burgare",
-      "image":"https://max-images.futureordering.com/images/product/13301/481BE1433EF1E19D05719DADB40335ECD/326x303.PNG",
+      "Id": 8,
+      "name": "Double Grilloumi®-burgare",
+      "image": "https://max-images.futureordering.com/images/product/13301/481BE1433EF1E19D05719DADB40335ECD/326x303.PNG",
       "price": 89
-    }
-    ,
+    },
     {
-      "Id":9,
-      "name":"Spicy Avocado Grand Chicken",
-      "image":"https://max-images.futureordering.com/images/product/7625/714401D2005B43F533201F87242A16C1D/326x303.PNG",
+      "Id": 9,
+      "name": "Spicy Avocado Grand Chicken",
+      "image": "https://max-images.futureordering.com/images/product/7625/714401D2005B43F533201F87242A16C1D/326x303.PNG",
       "price": 89
-    }
-    ,
+    },
     {
-      "Id":10,
-      "name":"Cheese 'n' Bacon",
-      "image":"https://max-images.futureordering.com/images/product/6989/A6806218F31180F908FD0CE88C1F4C4CD/652x606.PNG",
+      "Id": 10,
+      "name": "Cheese 'n' Bacon",
+      "image": "https://max-images.futureordering.com/images/product/6989/A6806218F31180F908FD0CE88C1F4C4CD/652x606.PNG",
       "price": 84
     }
-
   ],
-
-  "Orders":[
-   
+  "Receipt": [
   ]
-
 }

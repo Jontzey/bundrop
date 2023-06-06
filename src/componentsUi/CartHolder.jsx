@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse,faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { Link } from 'react-router-dom';
 
 
 
@@ -19,13 +20,18 @@ function CartHolder(props) {
         
             
         
-    return (  <div style={{display:"flex", backgroundColor:"#", justifyContent:"center", marginTop:"15px"}}>
-        <div style={{marginTop:"10px"}}>
+    return (  <div style={{display:"flex", backgroundColor:"#", justifyContent:"end", marginTop:"15px", position:"sticky", top:"100px", marginRight:"60px"}}>
+        
+         <div style={{marginTop:"10px"}}>
+        <Link style={{color:"black"}} to={"/order"}> 
         <FontAwesomeIcon icon={faCartShopping} size="2xl" />
+        </Link>
         </div>
         <div style={{marginLeft:"2px"}}>
             <h3>{NumberOfItems}</h3>
         </div>
+        
+       
     </div>);
 }
 

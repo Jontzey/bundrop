@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../componentsUi/Navbar';
 import { Link } from 'react-router-dom';
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHouse,faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import Footer from '../componentsUi/Footer';
 
 function Orders() {
 
@@ -73,12 +75,18 @@ function Orders() {
             }
 
         let totalprice = localStorage.getItem("TotalPrice");
-        let parsedTotalPrice = JSON.parse(totalprice);
-            SetSummaryPrice(parsedTotalPrice.TotalP);
-            console.log(isOrderEmpty);
+        if(!totalprice){
+            totalprice = {TotalP:0};
+        }
+        else{
+
+            totalprice = JSON.parse(totalprice);
+        }
+            SetSummaryPrice(totalprice.TotalP);
+            
                 
     },[])
-    return ( <div style={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center"}}>
+    return ( <div style={{display:"flex", flexDirection:"column", justifyContent:"center", alignItems:"center", marginBottom:"120px"}}>
         <Navbar/>
         <div className='Order-container'>
             <div style={{display:"flex", justifyContent:"center"}}>
@@ -107,16 +115,28 @@ function Orders() {
             {
                 !isOrderEmpty ? 
                 (
-                    <div>
+                    <div style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
                         <h1 style={{color:"whitesmoke"}}>No orders has been added</h1>
+                        <Link to={"/home"}><FontAwesomeIcon icon={faHouse} size="2xl" style={{color: "white"}} /></Link>
                     </div>
                 ):
                 (
                     <div className='Detail-container'>
                         <h1>Details</h1>
-                        <h3>Price:{SummaryPrice}</h3>
+                        <h3>Price: { SummaryPrice}kr</h3>
+
+                            {/* this is a precaution if user enter order route before adding anything to it */}
+                        {
+                            SummaryPrice === 0 ? 
+                            (
+                                <h3>No items found</h3>
+                            ):
+                            (
+                                
+                                <Link to={"/Payment"}><button style={{width:"100px",marginTop:"30px"}}>Pay</button></Link>
+                            )
+                        }
                         
-                        <Link to={"/Payment"}><button style={{width:"100px",marginTop:"30px"}}>Pay</button></Link>
                     </div>
                         
                 )
@@ -124,7 +144,7 @@ function Orders() {
            
         </div>
         </div>
-       
+       <Footer/>
     </div> );
 }
 

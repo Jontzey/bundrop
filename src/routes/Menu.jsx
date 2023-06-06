@@ -6,6 +6,7 @@ import ProductSelection from '../components/ProductSelection';
 import { useEffect, useState } from 'react';
 import Searchbar from '../components/Searchbar';
 import CartHolder from '../componentsUi/CartHolder';
+import Footer from '../componentsUi/Footer';
 
 
 
@@ -65,6 +66,7 @@ function Menu() {
                 ))
             }
         </div>
+        <Footer/>
         
         
     </div>);
