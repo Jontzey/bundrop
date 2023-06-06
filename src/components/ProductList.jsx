@@ -12,7 +12,7 @@ function ProductList(burger) {
             Cart = [];
         }
         else {
-            Cart = JSON.parse(Cart)
+            Cart = JSON.parse(Cart);
         }
         /// Chat gpt
         const newId = Cart.length > 0 ? Cart[Cart.length - 1].id + 1 : 0;

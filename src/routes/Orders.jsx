@@ -13,6 +13,7 @@ function Orders() {
    
     function DeleteOrder(props) {
         
+        console.log(props);
         const deleteItem = props.target;
         const item = deleteItem.getAttribute("id");
         console.log(props.target.parentElement)

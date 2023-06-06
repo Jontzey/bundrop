@@ -44,3 +44,4 @@ this are scenarios based on functions.
 
 this APP is only for training purpose on REACT, so app will only provide Choose burgers and store data and aswell GET,POST to db.json
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                                                        FIGMA
