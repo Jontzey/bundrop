@@ -61,7 +61,7 @@ function SwishPay() {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
             },
-          body: JSON.stringify({DeliverTime:delivirytime.toLocaleTimeString(),Number:SwishNumber, order:Orders})
+          body: JSON.stringify({DeliverTime:delivirytime.toLocaleTimeString(),Number:SwishNumber, Order:Orders})
     })
         localStorage.clear();
         setIsPayed(true);

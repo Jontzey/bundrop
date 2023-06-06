@@ -21,17 +21,24 @@ function Receipt() {
             <div className='recieptOnC' style={{display:"flex", alignItems:"center", justifyContent:"center"}}><h1>Reciept</h1></div>
             {
                 reciept.slice().reverse().map((r) => (
-                    <div style={{display:"flex", flexDirection:"column", alignItems:"center", border:"solid"}} >
-                        <h2>Number: {r.Number}</h2>
-                        {
-                            r.order.map((b) => (
-                                <div style={{display:"flex", gap:"10px", alignItems:"center"}} >
-                                    <h3>{b.name}</h3>
-                                    <h3>{b.price}kr</h3>
+                    <div style={{display:"flex", flexDirection:"row", alignItems:"center", border:"solid", justifyContent:"center"}} >
+                        <div>
+                        <h3>Number: {r.Number}</h3>
+                            <h3>{r.Name}</h3>
+                            <h3>Estimated Deliver time {r.DeliverTime}</h3>
+                        </div>
+                        <div style={{border:"solid"}} >
+                               {
+                            r.Order.map((b) => (
+                                <div style={{display:"flex", gap:"12px", alignItems:"center", flexDirection:"row"}} >
+                                    <h3 className='reciepStyle'>{b.name}</h3>
+                                    <h3 className='reciepStyle' >{b.price}kr</h3>
                                 </div>
+
                             ))
                         }
-                        <h3>Estimated Deliver time {r.DeliverTime}</h3>
+                        </div>
+                     
                     </div>
                 ))
             }
