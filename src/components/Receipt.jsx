@@ -22,12 +22,16 @@ function Receipt() {
             {
                 reciept.slice().reverse().map((r) => (
                     <div style={{display:"flex", flexDirection:"row", alignItems:"center", border:"solid", justifyContent:"center"}} >
-                        <div>
+                        <div style={{marginRight:"60px"}}>
                         <h3>Number: {r.Number}</h3>
+                            <h3>Name: {r.Name}</h3>
+                            <h3>City: {r.City}</h3>
+                            <h3>Adress: {r.Adress} / HouseNumber:{r.HouseNumber}</h3>
                             <h3>{r.Name}</h3>
                             <h3>Estimated Deliver time {r.DeliverTime}</h3>
                         </div>
-                        <div style={{border:"solid"}} >
+                        <div style={{border:"solid", display:"flex", flexDirection:"column", alignItems:"center"}} >
+                            <h1>Orders</h1>
                                {
                             r.Order.map((b) => (
                                 <div style={{display:"flex", gap:"12px", alignItems:"center", flexDirection:"row"}} >
