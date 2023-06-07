@@ -53,10 +53,10 @@ function ProductList(burger) {
     return (  <div >
 
                     <div className='All-products'>
-                        <h2 style={{margin:"0", fontSize:"22px"}}>{burger.name}</h2>
-                        <img style={{width:"303px"}} src={burger.image} alt="" />
-                        <h3 style={{margin:"0"}} >Price: {burger.price}</h3>
-                        <button onClick={addToCart}>Details</button>
+                        <h2 style={{margin:"0", fontSize:"22px", color:"white"}}>{burger.name}</h2>
+                        <img style={{width:"303px"}} src={burger.image} alt="img error" />
+                        <h3 style={{margin:"0", color:"white"}} >Price: {burger.price}</h3>
+                        <button className='add-btn' onClick={addToCart}>Add</button>
                     </div>
        
     </div>);

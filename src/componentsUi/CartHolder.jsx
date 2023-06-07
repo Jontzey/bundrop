@@ -20,7 +20,7 @@ function CartHolder(props) {
         
             
         
-    return (  <div style={{display:"flex", backgroundColor:"#", justifyContent:"end", marginTop:"15px", position:"sticky", top:"100px", marginRight:"60px"}}>
+    return (  <div style={{display:"flex", backgroundColor:"#", justifyContent:"end", marginTop:"15px", position:"sticky", top:"100px", marginRight:"60px",}}>
         
          <div style={{marginTop:"10px"}}>
         <Link style={{color:"black"}} to={"/order"}> 

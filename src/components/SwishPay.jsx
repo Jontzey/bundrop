@@ -75,6 +75,9 @@ function SwishPay() {
             <input onChange={(e) => {
                 SetCondition(e.target.value)
             }} type='tel' placeholder='070-2344832' pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required/>
+
+            
+
             <button onClick={submitSwish}>Submit</button>
             {
                 !isPhoneNumber ? (
