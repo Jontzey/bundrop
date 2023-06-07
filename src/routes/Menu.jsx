@@ -29,7 +29,6 @@ function Menu() {
     }
     function ChangeCart(props) {
 
-        console.log(props, "MENU page test")
         SetItemData(props);
     }
 
@@ -47,8 +46,13 @@ function Menu() {
     useEffect(() => {
         fetch("http://localhost:9000/Burgers").then((res) => res.json()).then((data) => {getData(data);})
     },[])
-  
+
+
+    // TODO? good to have is when there are more items in the productlist because of search option and select items//
+    // 1. make a scrollbar option for product list
+    // 2. make some condition if u scroll the page 
     return ( <div>
+
         <Navbar/>
         <ProductSelection GetNotificationNotImplemented={getNotiWindow} />
         <CartHolder GetItems={getItemNumberData}/>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import ConfirmedModal from '../componentsUi/ConfirmedModal';
 function SwishPay() {
 
     const [SwishNumber, SetNumber] = useState("");
@@ -140,14 +140,7 @@ function SwishPay() {
                     </div>
                 ):
                 (
-                     //This can be trown in to component becuase this code is used two times! in both VISA PAY AND SWISCH PAY!
-                    <div className='modal'>
-                        <h1 className="text-modal" >Congratz you Order is on the way!</h1>
-                        <h2 className="text-modal" > Visit Reciept to check you order</h2>
-                        <Link to={"/receipt"}><button>Reciepts</button></Link>
-                        <h1 className="text-modal" style={{textDecoration:"underline"}}>Your food will arrive at</h1>
-                        <h1 className="text-modal">{delivertime}</h1>
-                    </div>
+                    <ConfirmedModal time={delivertime}/>
                 )
             }
     </div>);

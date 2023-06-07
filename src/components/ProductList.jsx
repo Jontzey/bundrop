@@ -1,11 +1,11 @@
 import React from 'react';
 import { useState,useEffect } from 'react';
-
+import MenuModal from '../componentsUi/MenuModal';
 
 
 function ProductList(burger) {
     
-
+    const [isAdded, setAdded] = useState(false);
     function addToCart() {
         let Cart = localStorage.getItem("CartItems")
 
@@ -20,7 +20,6 @@ function ProductList(burger) {
         ///
         Cart.push({id:newId, name:burger.name, price:burger.price,image: burger.image});
         localStorage.setItem("CartItems", JSON.stringify(Cart));
-        alert(burger.name, "was added")
         
         let total = Cart.reduce((accumulator, item) => accumulator + item.price, 0);
 
@@ -46,10 +45,18 @@ function ProductList(burger) {
         }
         cartItemsNumberDisplayer = number;
         localStorage.setItem("NumberOfCartItems", JSON.stringify(cartItemsNumberDisplayer));
-
-        // TEST
         burger.CartHolder(number);
+
+
+        setAdded(true);
   
+    }
+
+    function funcModal(props){
+        setAdded(false);
+    }
+    function isModalNotClicked() {
+        setAdded(false);
     }
     return (  <div >
 
@@ -59,6 +66,21 @@ function ProductList(burger) {
                         <h3 style={{margin:"0", color:"white"}} >Price: {burger.price}</h3>
                         <button className='add-btn' onClick={addToCart}>Add</button>
                     </div>
+                    {!isAdded ? 
+                    (
+                        <div>
+
+                        </div>
+                    )
+                    :
+                    (
+                        <div className='menu-modal' onClick={isModalNotClicked}>
+                            <MenuModal name={burger.name} price={burger.price} isModal={funcModal}/>
+
+                        </div>
+                    )
+
+                    }
        
     </div>);
 }

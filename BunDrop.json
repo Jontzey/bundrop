@@ -8,7 +8,7 @@
     },
     {
       "Id": 2,
-      "name": "Crispy Supreme Sandwhich",
+      "name": "Crispy Supreme Sandwich",
       "image": "https://max-images.futureordering.com/images/product/13293/A100BB0EE1EB08F52E5FF1DB1D6C7FD1D/326x303.PNG",
       "price": 84
     },
@@ -61,8 +61,7 @@
       "price": 84
     }
   ],
-  "Receipt": 
-  [
+  "Receipt": [
     
   ]
 }
