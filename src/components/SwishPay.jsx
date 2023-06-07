@@ -9,8 +9,13 @@ function SwishPay() {
     const [isPayed, setIsPayed] = useState(false);
 
 
+    const [fullname, setFullname] = useState("");
+    const [email, setEmail] = useState("");
+    const [adress, setAdress] = useState("");
+    const [city, setCity] = useState("");
+    const [houseNumber, setHouseNumber] = useState("");
     let [Orders, setOrders] = useState([]);
-
+    const [delivertime, setDeliver] = useState(null);
     useEffect(() => {
         setIsPayed(false);
         let finalOrder = localStorage.getItem("CartItems");
@@ -54,6 +59,7 @@ function SwishPay() {
         let randomtime = Math.floor(Math.random() * (maxtime - mintime + 1)) + mintime;
 
         let delivirytime = new Date(currentTime.getTime() + randomtime * 60000)
+        setDeliver(delivirytime.toLocaleTimeString());
         fetch("http://localhost:9000/Receipt",  {
             method: "POST",
             headers: 
@@ -61,7 +67,14 @@ function SwishPay() {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
             },
-          body: JSON.stringify({DeliverTime:delivirytime.toLocaleTimeString(),Number:SwishNumber, Order:Orders})
+          body: JSON.stringify({DeliverTime:delivirytime.toLocaleTimeString(),
+                Number:SwishNumber,
+                Order:Orders,
+                Name:fullname,
+                Email:email,
+                Adress:adress,
+                City:city,
+                HouseNumber:houseNumber,})
     })
         localStorage.clear();
         setIsPayed(true);
@@ -76,13 +89,25 @@ function SwishPay() {
                 SetCondition(e.target.value)
             }} type='tel' placeholder='070-2344832' pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required/>
 
-            
+                                <form style={{display:"flex", flexDirection:"column", alignItems:"center", marginTop:"30px", gap:"20px"}}>
+                                    <label>Fullname:</label>
+                                    <input type="text" value={fullname} onChange={(event) => setFullname(event.target.value)} />
+
+                                    <label>City:</label>
+                                    <input type="text" value={city} onChange={(event) => setCity(event.target.value)} />
+
+                                    <label>Address:</label>
+                                    <input type="text" value={adress} onChange={(event) => setAdress(event.target.value)} />
+
+                                    <label>House number:</label>
+                                    <input type="text" value={houseNumber} onChange={(event) => setHouseNumber(event.target.value)} />
+                                </form>            
 
             <button onClick={submitSwish}>Submit</button>
             {
                 !isPhoneNumber ? (
                     <div>
-
+                            
                     </div>
                 ): (
                     <h3>The phone number you entered is to short</h3>
@@ -98,6 +123,7 @@ function SwishPay() {
                 )
                 :
                 (
+                    // THIS can also be like a modal !!!
                     <div style={{display:"flex", backgroundColor:"grey", flexDirection:"column", borderRadius:"120px", marginTop:"20px"}}>
                         <h1>Confirm payment</h1>
                         <div style={{display:"flex", justifyContent:"space-evenly"}}>
@@ -114,10 +140,13 @@ function SwishPay() {
                     </div>
                 ):
                 (
-                    <div>
-                        <h1>Congratz you Order is on the way!</h1>
-                        <h2> Visit Reciept to check you order</h2>
+                     //This can be trown in to component becuase this code is used two times! in both VISA PAY AND SWISCH PAY!
+                    <div className='modal'>
+                        <h1 className="text-modal" >Congratz you Order is on the way!</h1>
+                        <h2 className="text-modal" > Visit Reciept to check you order</h2>
                         <Link to={"/receipt"}><button>Reciepts</button></Link>
+                        <h1 className="text-modal" style={{textDecoration:"underline"}}>Your food will arrive at</h1>
+                        <h1 className="text-modal">{delivertime}</h1>
                     </div>
                 )
             }

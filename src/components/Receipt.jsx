@@ -16,6 +16,9 @@ function Receipt() {
         fetch("http://localhost:9000/Receipt").then((res) => res.json()).then((data) => setReciept(data));
 
     },[])
+    
+    // HERE we can throw in a if to see if list then make a interface change to let user if there is any reciep to see! 
+
     return ( <div>
             <Navbar/>
             <div className='recieptOnC' style={{display:"flex", alignItems:"center", justifyContent:"center"}}><h1>Reciept</h1></div>

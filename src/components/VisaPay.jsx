@@ -12,6 +12,8 @@ function VisaPay() {
     const [houseNumber, setHouseNumber] = useState("");
     const [phone, setPhone] = useState("");
     const [isPayed, setIsPayed] = useState(false);
+
+    const [delivertime, setDeliver] = useState(null);
     
     const [orders, setOrders] = useState([]);
     useEffect(() => {
@@ -38,6 +40,7 @@ function VisaPay() {
         let randomtime = Math.floor(Math.random() * (maxtime - mintime + 1)) + mintime;
         
         let delivirytime = new Date(currentTime.getTime() + randomtime * 60000)
+        setDeliver(delivirytime.toLocaleTimeString());
         fetch("http://localhost:9000/Receipt",  {
             method: "POST",
             headers: 
@@ -57,6 +60,7 @@ function VisaPay() {
             })
         }).then((res) => {
             if(res.ok) {
+                
                 localStorage.clear();
                 setIsPayed(true);
                 console.log(isPayed);        
@@ -70,6 +74,8 @@ function VisaPay() {
        
         {
                 !isPayed ?(
+
+                                    // THERE IS NO CHECK FOR if elements are emty or not.
                     
                                 <form onSubmit={handleSubmit} style={{display:"flex", flexDirection:"column", alignItems:"center", marginTop:"30px", gap:"20px"}}>
                                     <h1 style={{color:"whitesmoke"}}> Visa Payment</h1>
@@ -96,10 +102,13 @@ function VisaPay() {
                    
                 ):
                 (
-                    <div>
-                        <h1>Congratz you Order is on the way!</h1>
-                        <h2> Visit Reciept to check you order</h2>
+                    //This can be trown in to component becuase this code is used two times! in both VISA PAY AND SWISCH PAY!
+                    <div className='modal'>
+                        <h1 className='text-modal'>Congratz you Order is on the way!</h1>
+                        <h2 className="text-modal"> Visit Reciept to check you order</h2>
                         <Link to={"/receipt"}><button>Reciepts</button></Link>
+                        <h1 className="text-modal" style={{textDecoration:"underline"}}>Your food will arrive</h1>
+                        <h1 className="text-modal">{delivertime}</h1>
                     </div>
                 )
             }

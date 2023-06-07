@@ -61,43 +61,8 @@
       "price": 84
     }
   ],
-  "Receipt": [
-    {
-      "DeliverTime": "12:38:18",
-      "Number": "0705248623",
-      "Order": [
-        {
-          "id": 0,
-          "name": "Crispy Supreme Buffalo",
-          "price": 87,
-          "image": "https://max-images.futureordering.com/images/product/13294/E582D72BA21492BE7D88BEFAB4F5DE60D/326x303.PNG"
-        },
-        {
-          "id": 1,
-          "name": "Crispy Supreme Parmesan",
-          "price": 88,
-          "image": "https://max-images.futureordering.com/images/product/13295/0137F814A3DEF2C0271B6702C284721FD/326x303.PNG"
-        }
-      ],
-      "Name": "Jonathan",
-      "Email": "Jontes_666@hotmail.com",
-      "Adress": "Tröskvägen",
-      "City": "Glemmingebro",
-      "HouseNumber": "14",
-      "id": 2
-    },
-    {
-      "DeliverTime": "14:58:58",
-      "Number": "0705248623",
-      "Order": [
-        {
-          "id": 0,
-          "name": "Crispy Supreme Sandwhich",
-          "price": 84,
-          "image": "https://max-images.futureordering.com/images/product/13293/A100BB0EE1EB08F52E5FF1DB1D6C7FD1D/326x303.PNG"
-        }
-      ],
-      "id": 3
-    }
+  "Receipt": 
+  [
+    
   ]
 }
