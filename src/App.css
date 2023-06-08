@@ -96,6 +96,12 @@ h2{
 
 /* This is PRODUCT Selection JSX COMPONENT */
 
+.MenySele-container-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .MenySele-container{
   display: flex;
   justify-content: center;
@@ -126,7 +132,7 @@ h2{
   left:35%;
   background-color: whitesmoke;
   border-radius: 40px;
-  z-index: 10;
+  z-index: 1;
 }
 
 
@@ -215,6 +221,7 @@ h2{
 }
 
 .add-btn{
+  font-weight: bolder;
   margin-top: 10px;
   border-radius: 5px;
   width: 120px;
@@ -222,9 +229,8 @@ h2{
 }
 .add-btn:hover{
   
-  color: blue;
   background-color: rgb(168, 236, 7);
-  transition: ease-in 0.2s;
+  transition: ease-in 0.7s;
   
 }
 

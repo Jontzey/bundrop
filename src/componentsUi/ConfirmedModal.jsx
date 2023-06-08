@@ -13,7 +13,7 @@ function ConfirmedModal(props) {
                     <h1 className="text-modal" style={{textDecoration:"underline"}}>Your food will arrive at</h1>
                     <h1 className="text-modal">{props.time}</h1>
 
-                    <img style={{borderRadius:"900px", zIndex:"-1", height:"300px", width:"300px"}} src='https://media0.giphy.com/media/YWUvOugDNUBS0MTqkv/giphy.gif?cid=ecf05e47ue2adwql6dkpg5x2y8wxbvfhty0s7xzhy7ssqra0&ep=v1_gifs_search&rid=giphy.gif&ct=g' alt='Error, img not found'/>
+                    <img style={{borderRadius:"900px", zIndex:"-1", height:"300px", width:"300px", border:"solid white 12px"}} src='https://media0.giphy.com/media/YWUvOugDNUBS0MTqkv/giphy.gif?cid=ecf05e47ue2adwql6dkpg5x2y8wxbvfhty0s7xzhy7ssqra0&ep=v1_gifs_search&rid=giphy.gif&ct=g' alt='Error, img not found'/>
                 </div>);
 }
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Navbar from '../componentsUi/Navbar';
+import Footer from '../componentsUi/Footer';
 
 
 
@@ -49,6 +50,7 @@ function Receipt() {
                     </div>
                 ))
             }
+            <Footer/>
     </div> );
 }
 

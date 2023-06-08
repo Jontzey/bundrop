@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SorryModal from '../componentsUi/SorryModal';
 
 
 
@@ -20,30 +21,28 @@ function ProductSelection(props) {
         }
         
     }
-    function setWindowState() {
-        if(popWindow === false){
-            setPopWindow(true);
-            props.GetNotificationNotImplemented(popWindow)
-        }
-        else{
-            setPopWindow(false)
-            props.GetNotificationNotImplemented(popWindow)
-        }
+    function getModalState() {
+
+        setPopWindow(false);
+    }
+    function outsideModal(){
+        setPopWindow(false);
     }
     
-    return ( <div className='MenySele-container'>
-        <button onClick={getNotiWindow} className='btnSel'>+ Menu</button>
+    return ( <div className='MenySele-container-div'>
+        <div className='MenySele-container'>
+            <button onClick={getNotiWindow} className='btnSel'>+ Menu</button>
         <button onClick={getNotiWindow} className='btnSel'>Drinks</button>
         <button onClick={getNotiWindow} className='btnSel'>Burgers</button>
+        </div>
+        
         {!popWindow ? (
             <div >
                 
             </div>
         ):(
-            <div className='TestFunction'>
-                <h1>Sorry</h1>
-                <h3>this function is not implemented yet</h3>
-                <button onClick={setWindowState}>Ok</button>
+            <div className='menu-modal' onClick={outsideModal}>
+                <SorryModal isModal={getModalState}/>
             </div>
         )
 
