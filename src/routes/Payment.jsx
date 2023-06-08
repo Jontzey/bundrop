@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Navbar from '../componentsUi/Navbar';
 import VisaPay from '../components/VisaPay';
 import SwishPay from '../components/SwishPay';
+import Footer from '../componentsUi/Footer';
 
 
 function Payment() {
@@ -52,6 +53,7 @@ function Payment() {
        )
 
        }
+       <Footer/>
     </div>);
 }
 

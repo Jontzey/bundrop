@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ConfirmedModal from '../componentsUi/ConfirmedModal';
+import Footer from '../componentsUi/Footer';
 function SwishPay() {
 
     const [SwishNumber, SetNumber] = useState("");
@@ -91,16 +92,16 @@ function SwishPay() {
 
                                 <form style={{display:"flex", flexDirection:"column", alignItems:"center", marginTop:"30px", gap:"20px"}}>
                                     <label>Fullname:</label>
-                                    <input type="text" value={fullname} onChange={(event) => setFullname(event.target.value)} />
+                                    <input type="text" required value={fullname} onChange={(event) => setFullname(event.target.value)} />
 
                                     <label>City:</label>
-                                    <input type="text" value={city} onChange={(event) => setCity(event.target.value)} />
+                                    <input type="text" required value={city} onChange={(event) => setCity(event.target.value)} />
 
                                     <label>Address:</label>
-                                    <input type="text" value={adress} onChange={(event) => setAdress(event.target.value)} />
+                                    <input type="text" required value={adress} onChange={(event) => setAdress(event.target.value)} />
 
                                     <label>House number:</label>
-                                    <input type="text" value={houseNumber} onChange={(event) => setHouseNumber(event.target.value)} />
+                                    <input type="text" required value={houseNumber} onChange={(event) => setHouseNumber(event.target.value)} />
                                 </form>            
 
             <button onClick={submitSwish}>Submit</button>
@@ -143,6 +144,7 @@ function SwishPay() {
                     <ConfirmedModal time={delivertime}/>
                 )
             }
+          
     </div>);
 }
 

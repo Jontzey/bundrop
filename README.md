@@ -4,7 +4,7 @@
 
 To Run the app do following npm commands
 
-npm run start-app
+npm run start-app        //Important! u need to install a package that can run two script at same time --> npm install concurrently --save-dev
 
 (this will run two scripts one to Start the app and one to start json-server)
 
@@ -42,6 +42,11 @@ personal information. But login function is not implemented.
 
 this are scenarios based on functions.
 
+//Update! swish now has form aswell just because of knowing where to send the drone. a TODO would be figure out would be maybe to fill in just where to deliver then show number and a pay button when content is filled ///
+
 this APP is only for training purpose on REACT, so app will only provide Choose burgers and store data and aswell GET,POST to db.json
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                                                         FIGMA
+This project Started by doing a simple design by a design tool, In the process of coding alot of design that I didnt think about would appear in code form and not in figma design, like modals.
+
+https://www.figma.com/file/6H0jsspOepmekZYbWkGZGz/Untitled?type=design&node-id=0%3A1&t=LZ0QtNDEB8f4Faly-1

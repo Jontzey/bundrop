@@ -15,7 +15,8 @@ function ProductList(burger) {
         else {
             Cart = JSON.parse(Cart);
         }
-        /// Chat gpt
+        /// got this from Chat gpt 
+        //this code checks as i can read it if cart length is more than 0 else and no item exist give that zero and if there is item then add + 1 to id
         const newId = Cart.length > 0 ? Cart[Cart.length - 1].id + 1 : 0;
         ///
         Cart.push({id:newId, name:burger.name, price:burger.price,image: burger.image});
@@ -32,7 +33,7 @@ function ProductList(burger) {
         }
         TotalPrice.TotalP = total;
         localStorage.setItem("TotalPrice", JSON.stringify(TotalPrice));
-        console.log(total);
+        
 
         let number = Cart.length;
         
