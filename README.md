@@ -43,6 +43,7 @@ kill-port@2.0.1
 4. Cart item icon does not look good with placement or when page the is at a certain resolution
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
                                                                         FIGMA
 This project Started by doing a simple design by a design tool, In the process of coding alot of design that I didnt think about would appear in code form and not in figma design, like modals.
 
