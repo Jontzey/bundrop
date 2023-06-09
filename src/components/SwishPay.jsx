@@ -84,7 +84,7 @@ function SwishPay() {
         setConfirm(false);
     }
     return ( <div style={{display:"flex", flexDirection:"column", alignItems:"center", gap:"10px"}}>
-        <h1 style={{color:"whitesmoke"}}>Swish Payment</h1>
+        <h1 style={{color:"whitesmoke", margin:"0"}}>Swish Payment</h1>
         <h2 style={{color:"black"}}>Enter phone number</h2>
             <input onChange={(e) => {
                 SetCondition(e.target.value)
