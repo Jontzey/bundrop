@@ -7,6 +7,7 @@ To Run the app do following npm commands
 npm run start-app        //Important! u need to install a package that can run two script at same time --> npm install concurrently --save-dev
 
 (this will run two scripts one to Start the app and one to start json-server)
+If u want to run them independently use "npm run" and then the script "Bundrop-db" or "start"
 
 If a port is already open you can use following command to close/kill the port in terminal:
 
@@ -15,7 +16,7 @@ npx kill-port 9000
 
 The number should be whatever port you are trying to accsess
 
-Current ports that should open when you run the command is "3000" and "9000"
+Current ports that should open when you run the app is "3000" and "9000"
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -33,18 +34,13 @@ npm i --save @fortawesome/free-regular-svg-icons
 kill-port@2.0.1
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                                                                -INFO PAY-
+                                                                -Known Issues-
 
-VISA PAY : its for user who does not need to be logged in, but if they want to they can be logged in if so the Pay information would be saved. In this case that function not implemented.
+1. User can accsess payment route without items in Cart by writing in Url /payment --> fix would be to make the component check if there are items in cart.
+2. Reciept component if its empty does not tell user its empty --> fix would be add a condition.
+3. Swish component can make a post request with only filling in number field --> fix would be to add number in the form as a input instead of having it outside.
+4. Cart item icon does not look good with placement or when page the is at a certain resolution
 
-Swish: its for Users who are registered on the webiste and provided personal information beforehand. But in this situation the user has the same location always until they update their current
-personal information. But login function is not implemented.
-
-this are scenarios based on functions.
-
-//Update! swish now has form aswell just because of knowing where to send the drone. a TODO would be figure out would be maybe to fill in just where to deliver then show number and a pay button when content is filled ///
-
-this APP is only for training purpose on REACT, so app will only provide Choose burgers and store data and aswell GET,POST to db.json
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                                                         FIGMA
 This project Started by doing a simple design by a design tool, In the process of coding alot of design that I didnt think about would appear in code form and not in figma design, like modals.
