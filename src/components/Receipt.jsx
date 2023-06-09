@@ -32,7 +32,6 @@ function Receipt() {
                             <h3>Name: {r.Name}</h3>
                             <h3>City: {r.City}</h3>
                             <h3>Adress: {r.Adress} / HouseNumber:{r.HouseNumber}</h3>
-                            <h3>{r.Name}</h3>
                             <h3>Estimated Deliver time {r.DeliverTime}</h3>
                         </div>
                         <div style={{border:"solid", display:"flex", flexDirection:"column", alignItems:"center", borderRadius:"10px", height:"250px", backgroundColor:""}} >
