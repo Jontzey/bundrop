@@ -34,6 +34,7 @@ npm i --save @fortawesome/free-regular-svg-icons
 kill-port@2.0.1
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
                                                                 -Known Issues-
 
 1. User can accsess payment route without items in Cart by writing in Url /payment --> fix would be to make the component check if there are items in cart.
