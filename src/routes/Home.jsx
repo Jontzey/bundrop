@@ -13,7 +13,7 @@ function Home() {
             
         <div className='Home-container'>
             <div className='IntroWelcom-text'>
-                <h1>Welcom To Bun Drop</h1>
+                <h1>Welcome To Bun Drop</h1>
             </div>
             <div style={{display:"flex", flexDirection:"column", alignItems:"center"}} className='IntroDescription-text'>
                 <h3>The fast food resturant who delivers</h3>
