@@ -134,7 +134,7 @@ function Orders() {
                             ):
                             (
                                 
-                                <Link to={"/Payment"}><button style={{width:"100px",marginTop:"30px"}}>Pay</button></Link>
+                                <Link to={"/Payment"}><button style={{width:"100px",marginTop:"30px", backgroundColor:"lightgreen", borderRadius:"20px"}}>Go to Payment</button></Link>
                             )
                         }
                         

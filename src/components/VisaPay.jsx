@@ -98,7 +98,7 @@ function VisaPay() {
                                     <label>Phone number:</label>
                                     <input type="text" required value={phone} onChange={(event) => setPhone(event.target.value)} />
 
-                                    <button type='submit'>Submit</button>
+                                    <button style={{height:"50px", width:"200px",backgroundColor:"lightgreen"}} type='submit'>Submit Pay</button>
                                 </form>
                    
                 ):

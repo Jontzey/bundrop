@@ -104,7 +104,7 @@ function SwishPay() {
                                     <input type="text" required value={houseNumber} onChange={(event) => setHouseNumber(event.target.value)} />
                                 </form>            
 
-            <button onClick={submitSwish}>Submit</button>
+            <button style={{height:"50px", width:"200px", backgroundColor:"lightgreen"}} onClick={submitSwish}>Submit Pay</button>
             {
                 !isPhoneNumber ? (
                     <div>
@@ -125,7 +125,7 @@ function SwishPay() {
                 :
                 (
                     // THIS can also be like a modal !!!
-                    <div style={{display:"flex", backgroundColor:"grey", flexDirection:"column", borderRadius:"120px", marginTop:"20px"}}>
+                    <div style={{display:"flex", backgroundColor:"grey", flexDirection:"column", borderRadius:"120px", marginTop:"20px", marginBottom:"100px"}}>
                         <h1>Confirm payment</h1>
                         <div style={{display:"flex", justifyContent:"space-evenly"}}>
                             <button onClick={AdmitPay}>Pay</button>
