@@ -62,65 +62,6 @@
     }
   ],
   "Receipt": [
-    {
-      "DeliverTime": "00:58:53",
-      "Number": "aa",
-      "Order": [
-        {
-          "id": 0,
-          "name": "Crispy Supreme Parmesan",
-          "price": 88,
-          "image": "https://max-images.futureordering.com/images/product/13295/0137F814A3DEF2C0271B6702C284721FD/326x303.PNG"
-        }
-      ],
-      "Name": "aa",
-      "Email": "aa",
-      "Adress": "aa",
-      "City": "aa",
-      "HouseNumber": "aa",
-      "id": 2
-    },
-    {
-      "DeliverTime": "00:36:40",
-      "Number": "j",
-      "Order": [
-        {
-          "id": 0,
-          "name": "Crispy Supreme Sandwich",
-          "price": 84,
-          "image": "https://max-images.futureordering.com/images/product/13293/A100BB0EE1EB08F52E5FF1DB1D6C7FD1D/326x303.PNG"
-        },
-        {
-          "id": 1,
-          "name": "Real Green Burger",
-          "price": 73,
-          "image": "https://max-images.futureordering.com/images/product/13297/E39D3317D830437B15E03EFD99E9A7A7D/326x303.PNG"
-        }
-      ],
-      "Name": "j",
-      "Email": "j",
-      "Adress": "j",
-      "City": "j",
-      "HouseNumber": "j",
-      "id": 3
-    },
-    {
-      "DeliverTime": "12:54:20",
-      "Number": "00000000000",
-      "Order": [
-        {
-          "id": 0,
-          "name": "Crispy Supreme Buffalo",
-          "price": 87,
-          "image": "https://max-images.futureordering.com/images/product/13294/E582D72BA21492BE7D88BEFAB4F5DE60D/326x303.PNG"
-        }
-      ],
-      "Name": "",
-      "Email": "",
-      "Adress": "",
-      "City": "",
-      "HouseNumber": "",
-      "id": 4
-    }
+    
   ]
 }
