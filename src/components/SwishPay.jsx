@@ -6,7 +6,7 @@ function SwishPay() {
 
     const [SwishNumber, SetNumber] = useState("");
     const [confirm, setConfirm] = useState(false);
-    const [isPhoneNumber, setIsPhone] = useState(false);
+    const [isPhoneNumber, setIsPhone] = useState("");
     const [isPayed, setIsPayed] = useState(false);
 
 
@@ -31,29 +31,13 @@ function SwishPay() {
         console.log(finalOrder);
     },[])
 
-    function SetCondition(e){
-        
-        SetNumber(e);
-        console.log(SwishNumber)
-    }
-    function submitSwish() {
-        if(SwishNumber.length < 9) {
-            setIsPhone(true);
-            if(confirm === true){
-                setConfirm(false);
-            }
-        }
-        else {
-            setConfirm(true);
+   
+    function handleSubmit(event) {
 
-            if(isPhoneNumber === true){
-                setIsPhone(false);
-            }
+        // används för att stoppa den vanliga handlingen som normalt sett skulle ske när ett event inträffar. I en formulärsituation används det för att förhindra att formuläret skickas och att sidan laddas om. Istället kan du använda JavaScript-kod för att hantera inskickandet på ett anpassat sätt, till exempel genom att validera data eller göra en API-förfrågan.
+        // event.preventDefault();
 
-        }
-    }
-    function AdmitPay() {
-        setConfirm(false);
+       
         let currentTime = new Date();
         let mintime = 20;
         let maxtime = 60;
@@ -69,10 +53,9 @@ function SwishPay() {
             'Content-Type': 'application/json'
             },
           body: JSON.stringify({DeliverTime:delivirytime.toLocaleTimeString(),
-                Number:SwishNumber,
+                Number:isPhoneNumber,
                 Order:Orders,
                 Name:fullname,
-                Email:email,
                 Adress:adress,
                 City:city,
                 HouseNumber:houseNumber,})
@@ -80,17 +63,19 @@ function SwishPay() {
         localStorage.clear();
         setIsPayed(true);
     }
-    function CancelPay() {
-        setConfirm(false);
-    }
+   
     return ( <div style={{display:"flex", flexDirection:"column", alignItems:"center", gap:"10px"}}>
-        <h1 style={{color:"whitesmoke", margin:"0"}}>Swish Payment</h1>
-        <h2 style={{color:"black"}}>Enter phone number</h2>
-            <input onChange={(e) => {
-                SetCondition(e.target.value)
-            }} type='tel' placeholder='070-2344832' pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required/>
 
-                                <form style={{display:"flex", flexDirection:"column", alignItems:"center", marginTop:"30px", gap:"20px"}}>
+                             <h1 style={{color:"whitesmoke", margin:"0"}}>Swish Payment</h1>
+            {
+                !isPayed ?(
+
+                                <form onSubmit={handleSubmit} style={{display:"flex", flexDirection:"column", alignItems:"center", marginTop:"30px", gap:"20px"}}>
+
+                                    
+                                    <label>Phone number:</label>
+                                    <input type="text" required value={isPhoneNumber} onChange={(event) => setIsPhone(event.target.value)} />
+
                                     <label>Fullname:</label>
                                     <input type="text" required value={fullname} onChange={(event) => setFullname(event.target.value)} />
 
@@ -102,43 +87,9 @@ function SwishPay() {
 
                                     <label>House number:</label>
                                     <input type="text" required value={houseNumber} onChange={(event) => setHouseNumber(event.target.value)} />
+                                    <button style={{height:"50px", width:"200px",backgroundColor:"lightgreen"}} type='submit'>Submit Pay</button>
                                 </form>            
-
-            <button style={{height:"50px", width:"200px", backgroundColor:"lightgreen"}} onClick={submitSwish}>Submit Pay</button>
-            {
-                !isPhoneNumber ? (
-                    <div>
-                            
-                    </div>
-                ): (
-                    <h3>The phone number you entered is to short</h3>
-                    
-                )
-            }
-            {
-                !confirm ? 
-                (
-                    <div>
-                       
-                    </div>
-                )
-                :
-                (
-                    // THIS can also be like a modal !!!
-                    <div style={{display:"flex", backgroundColor:"grey", flexDirection:"column", borderRadius:"120px", marginTop:"20px", marginBottom:"100px"}}>
-                        <h1>Confirm payment</h1>
-                        <div style={{display:"flex", justifyContent:"space-evenly"}}>
-                            <button onClick={AdmitPay}>Pay</button>
-                            <button onClick={CancelPay}>Cancel</button>
-                        </div>
-                    </div>
-                )
-            }
-            {
-                !isPayed ?(
-                    <div>
-
-                    </div>
+                  
                 ):
                 (
                     <ConfirmedModal time={delivertime}/>
