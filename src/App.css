@@ -323,6 +323,24 @@ h2{
   }
   
 } 
+
+ @media screen and (max-width: 970px){
+    
+    .Order-container{
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      width: 670px;
+      margin-top: 200px;
+      background-color: #1D1717;
+    }
+    
+  
+} 
+
+
 @media screen and (max-height: 870px){
   .formSub{
     display: flex;
@@ -331,14 +349,18 @@ h2{
     margin-top: 10px;
     gap: 1px;
   }
-
-  .Pay-logo{
-    width: 60px;
-    height: 60px;
-    border-radius: 40px;
-    cursor: pointer;
+  .Order-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 670px;
+    margin-top: 100px;
+    background-color: #1D1717;
   }
-} 
+}
+ 
 
 
   
