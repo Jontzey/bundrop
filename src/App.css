@@ -290,7 +290,10 @@ h2{
   margin-top: 30px;
   gap: 20px;
 }
-
+.ICON-choosing{
+  display: flex;
+  gap: 60px;
+}
 @media screen and (max-width:970px) {
 
   .formSub{
@@ -311,6 +314,14 @@ h2{
     margin-top: 30px;
     gap: 5px;
   }
+
+  .Pay-logo{
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+    cursor: pointer;
+  }
+  
 } 
 @media screen and (max-height: 870px){
   .formSub{
@@ -319,6 +330,13 @@ h2{
     align-items: center;
     margin-top: 10px;
     gap: 1px;
+  }
+
+  .Pay-logo{
+    width: 60px;
+    height: 60px;
+    border-radius: 40px;
+    cursor: pointer;
   }
 } 
 

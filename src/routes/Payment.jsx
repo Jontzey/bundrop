@@ -32,7 +32,7 @@ function Payment() {
     return (  <div style={{display:"flex",flexDirection:"column", alignItems:"center"}}>
        <Navbar/>
        <h1>Press to choose pay method</h1>
-       <div style={{display:"flex",gap:"60px"}}>
+       <div className='ICON-choosing'>
         <img onClick={Paymentmethod1} className='Pay-logo' src="https://www.repolina.se/wp-content/uploads/2017/11/Swish-logo.jpg" alt="Error" />
         <img onClick={Paymentmethod2} className='Pay-logo' src="https://logowik.com/content/uploads/images/219_visa.jpg" alt="Error" />
        </div>
