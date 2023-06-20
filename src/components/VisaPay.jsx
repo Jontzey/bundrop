@@ -73,13 +73,13 @@ function VisaPay() {
     }
     return ( <div>
        
+        <h1 style={{color:"whitesmoke", margin:"0"}}> Visa Payment</h1>
         {
                 !isPayed ?(
 
                                     // THERE IS NO CHECK FOR if elements are emty or not.
                     
-                                <form onSubmit={handleSubmit} className='formSub' >
-                                    <h1 style={{color:"whitesmoke"}}> Visa Payment</h1>
+                                    <form onSubmit={handleSubmit} className='formSub' >
                                     <label>Fullname:</label>
                                     <input type="text" required value={fullname} onChange={(event) => setFullname(event.target.value)} />
 
