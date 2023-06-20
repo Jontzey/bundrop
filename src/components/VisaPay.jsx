@@ -78,7 +78,7 @@ function VisaPay() {
 
                                     // THERE IS NO CHECK FOR if elements are emty or not.
                     
-                                <form onSubmit={handleSubmit} style={{display:"flex", flexDirection:"column", alignItems:"center", marginTop:"30px", gap:"20px"}}>
+                                <form onSubmit={handleSubmit} className='formSub' >
                                     <h1 style={{color:"whitesmoke"}}> Visa Payment</h1>
                                     <label>Fullname:</label>
                                     <input type="text" required value={fullname} onChange={(event) => setFullname(event.target.value)} />

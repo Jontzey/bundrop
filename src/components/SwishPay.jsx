@@ -64,13 +64,13 @@ function SwishPay() {
         setIsPayed(true);
     }
    
-    return ( <div style={{display:"flex", flexDirection:"column", alignItems:"center", gap:"10px"}}>
+    return ( <div id='swishPay' style={{display:"flex", flexDirection:"column", alignItems:"center", gap:"10px", height:"10vh"}}>
 
                              <h1 style={{color:"whitesmoke", margin:"0"}}>Swish Payment</h1>
             {
                 !isPayed ?(
-
-                                <form onSubmit={handleSubmit} style={{display:"flex", flexDirection:"column", alignItems:"center", marginTop:"30px", gap:"20px"}}>
+                                
+                                    <form onSubmit={handleSubmit} className='formSub'>
 
                                     
                                     <label>Phone number:</label>
@@ -88,7 +88,9 @@ function SwishPay() {
                                     <label>House number:</label>
                                     <input type="text" required value={houseNumber} onChange={(event) => setHouseNumber(event.target.value)} />
                                     <button style={{height:"50px", width:"200px",backgroundColor:"lightgreen"}} type='submit'>Submit Pay</button>
-                                </form>            
+                                </form>   
+                                
+                                         
                   
                 ):
                 (
